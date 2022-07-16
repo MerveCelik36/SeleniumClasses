@@ -1,0 +1,53 @@
+Xpath:
+Why do we need it?
+1. Developer may not provide all the locators on HTML
+2.  By using xpath and css we can identify elements with any given attributes
+what is xpath?
+is like a query language which help us to identify elements uniquely on the web page
+Type of Xpath:
+Absolute Xpath: starts from the starting node of the html
+                it always starts with single slash(/)
+                example: /html/body/div/div
+Relative Xpath: start from any node in html
+               always start with double slash
+
+               syntax for relative xpath;
+                // tagname[@attribute='value']
+                example: //input[@id='email']
+ When we use Xpath? When there is no locator  such as name, id etc.
+ because in xpath we  can use any of attributes even
+ thought they are not thr locator. but some companies just use Xpath instead
+ using locator
+ it on thir hand to choose whichever they wanna use.
+
+
+identfiying elements by its text:
+//tagname[text() ='text value']
+//a[text()='Create new account']
+
+Identifying elements by using .contains() method
+//tagname[contains(@attribute, 'partial attribute value')]
+//h2[contains(text(),'the world')]
+-->we use when we have very long attribute values.
+
+starts-with will identify elements by its partial starting value
+//tagname[starts-with(@attribute,'partial starting attribute value')])
+example: //input[start-with(@aria-label,'Email')]
+
+ends-with was used in xpath 1.0 we are using 2.0 and this method is not available
+
+Advanced Xpath:
+is based on parent and child, siblings relationship.
+we can identifying element by following siblings
+//tagname[@attribute='attribute value']/ following-sibling::tagname
+we use it to locate something when we don't have the right attributes.
+Identifying element by following sibling
+//tagname[@attribute = 'attribute value']/following-sibling :: siblingTagname
+e.g //input[@id = 'calFromDate']/following-sibling :: imp
+
+identifying element by preceding sibling
+//tagname[@attribute = 'attribute value']/preceding-sibling :: sibling's Tagname
+e.g //span[text() = '& Orders']/preceding-sibling :: span
+
+identifying elements by its parent
+//tagname[@attributes='attribute values']/parent::parent's Tagname
