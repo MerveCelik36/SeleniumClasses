@@ -28,7 +28,7 @@ it tells the webdriver to wait until certain amount of time before throwing an e
 it will only be written once and will be applied to the whole session of the execution
 We can say the Implicit wait is a global wait
 
-IMplicit wait works with findElement() method
+Implicit wait works with findElement() method
 
 Implicit wait is usually set for 20 seconds. If your element is found in any time between the given time
 the remaining time will be ignored and your script will move on to the next line or to the next step
