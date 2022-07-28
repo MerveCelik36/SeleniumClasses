@@ -20,6 +20,7 @@ public class HomeWork2 {
         WebDriver driver=new ChromeDriver();
         driver.get(url);
         driver.manage().window().maximize();
+        String mainPageHandle = driver.getWindowHandle();
 
         WebElement clickMe1= driver.findElement(By.xpath("//button[@onclick='myAlertFunction()']"));
         clickMe1.click();
