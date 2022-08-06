@@ -1,5 +1,6 @@
 package Class10;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,12 +26,12 @@ public class TakingScreenshots {
         TakesScreenshot ts = (TakesScreenshot)driver;
         File srcFile = ts.getScreenshotAs(OutputType.FILE); // the screenshot is taken
 
-       /* try {
+        try {
             // copy the file and paste in the new location as png file
             // commons.io jar file is needed for this
-           // FileUtils.copyFile(srcFile, new File("screenshots/SmartBear/adminPage111111.png"));
+            FileUtils.copyFile(srcFile, new File("screenshots/SmartBear/adminPage111111.png"));
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 }
