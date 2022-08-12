@@ -1,25 +1,40 @@
 package Pages;
 
+import Utils.CommonMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static TestBase.BasedClass.driver;
 
-public class LoginPageWithPageFactory {
-    @FindBy(id = "txtUsername")
-    public WebElement username;
+public class LoginPageWithPageFactory extends CommonMethods {
+@FindBy(id = "txtUsername")
+public WebElement username;
 
-    @FindBy(xpath = "//input[@name = 'txtPassword']")
-    public WebElement password;
+@FindBy(xpath = "//input[@name = 'txtPassword']")
+public WebElement password;
 
-    @FindBy(css = "input#btnLogin")
-    public WebElement loginButton;
+@FindBy(css = "input#btnLogin")
+public WebElement loginButton;
 
 //    @FindBy(css = "input#btnLogin")
 //    public List<WebElement> multipleElements;
 
-    public LoginPageWithPageFactory() {
+
+
+/**
+ * this method will login
+ */
+// you can put login actions and reuse the common methods
+public void loginActions() {
+        sendText(username, "Admin");
+        sendText(password, "Hum@nhrm123");
+        loginButton.click();
+
+        }
+
+public LoginPageWithPageFactory() {
         PageFactory.initElements(driver, this);
-    }
-}
+        }
+
+        }
